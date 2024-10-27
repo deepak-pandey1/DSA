@@ -21,7 +21,7 @@ public:
         this->next = NULL;
     }
     ~Node() {                                                            //showing delete is work in perfection
-        cout << "Destructor called for: " << this->data << endl;
+        cout << endl << "Destructor called for: " << this->data << endl;
     }
 };
 
@@ -44,24 +44,6 @@ void insertAtHead(Node* &head, Node* &tail, int data) {
 
 
 }
-//I want to insert a node right at the end of LINKED LIST
-void insertAtTail(Node* &head,Node* &tail, int data) {
-        if(head == NULL) {
-                Node* newNode = new Node(data);
-                head = newNode;
-                tail = newNode;
-                
-        }
-        else {
-            //step1: creatae a node
-            Node* newNode = new Node(data);
-            //step2: connect woth tail ndoe
-            tail->next = newNode;
-            //step3: update tail;
-            tail = newNode;
-        }
-
-}
 
 void print(Node* head) {
 
@@ -82,36 +64,6 @@ int findLength(Node* &head ) {
     return len;
 }
 
-void insertAtPosition(int data, int position, Node* &head, Node* &tail) {
-    int len = findLength(head);
-    
-    if(position == 1) {
-            insertAtHead(head, tail , data);
-            return;
-    }
-    else if(position > len) {
-            insertAtTail(head, tail, data);
-            return;
-    }
-    else {
-        Node* newNode = new Node(data);
-        
-        Node* prev = NULL;
-        Node* curr = head;
-        while(position != 1) {
-            position--;
-            prev = curr;
-            curr = curr->next;
-        }
-        
-        //step3:
-        newNode -> next = curr;
-        //step4:
-        prev -> next = newNode;
-        
-    }
-    
-}
 
 void deleteNode(Node* &head, Node* &tail, int position) {
   //empty list
@@ -120,8 +72,7 @@ void deleteNode(Node* &head, Node* &tail, int position) {
     return;
   }
 
-  if(head == tail) {
-    //single element
+  if(head == tail) {   //single element
     Node* temp = head;
     delete temp;
     head = NULL;
@@ -132,36 +83,27 @@ void deleteNode(Node* &head, Node* &tail, int position) {
   int len = findLength(head);
 
   //delete from head
-  if(position == 1) {
-    //first node ko delete kardo
+  if(position == 1) {   //first node ko delete kardo
     Node* temp = head;
     head = head->next;
     //head = temp->next;
     temp->next = NULL;
     delete temp;
   }
-  else if(position == len) {
-    //last node ko delete krdo\
-
+  else if(position == len) {   //last node ko delete krdo
     //find prev
     Node* prev = head;
     while(prev -> next != tail ){
       prev = prev -> next;
     }
-
     //prev node ka link null karo
     prev -> next = NULL;
-
     //node delete kro
     delete tail;
-
     //update tail
     tail = prev;
-
   }
-  else {
-    //middle me koi node ko delete krna h 
-
+  else {    //middle me koi node ko delete krna h
     //step1: set prev/curr pointers
     Node* prev = NULL;
     Node* curr = head;
@@ -170,31 +112,28 @@ void deleteNode(Node* &head, Node* &tail, int position) {
       prev = curr;
       curr = curr->next;
     }
-
     //step2: prev -> next me curr ka next node add kro
     prev->next = curr->next;
-
     //step3: node isolate krdo
     curr->next = NULL;
     //step4: delte node
     delete curr;
-
   }
-
 }
 
 int main()
 {
     Node* head = NULL;
     Node* tail = NULL;
-    // insertAtHead(head, tail,40);
-    // insertAtHead(head, tail,30);
-    // insertAtHead(head,tail, 20);
-    // insertAtHead(head, tail,10);
+    insertAtHead(head, tail,40);
+    insertAtHead(head, tail,30);
+    insertAtHead(head,tail, 20);
+    insertAtHead(head, tail,10);
 
-    // deleteNode(head, tail, 3);
-    // print(head);
-    // cout << endl;
+    print(head);
+    deleteNode(head, tail, 3);
+    print(head);
+    cout << endl;
 
     // deleteNode(head, tail, 5);
     // print(head);
@@ -203,21 +142,6 @@ int main()
     // deleteNode(head, tail, 1);
     // print(head);
     // cout << endl;
-
-
-
-    // --------->special case
-
-    insertAtHead(head, tail,50);
-    print(head);
-    cout << endl;
-    cout << "Before-> Length of LL is: " << findLength(head) << endl;
-    cout << "before -> head -> " << head -> data << endl;
-    cout << "Before tail-> " << tail->data << endl;
-    deleteNode(head, tail, 1);
-    cout << "After Length of LL is: " << findLength(head) << endl;
-        cout << "before -> head -> " << head -> data << endl;
-    cout << "After tail-=> << " << tail->data << endl;
 
     return 0;
 }
