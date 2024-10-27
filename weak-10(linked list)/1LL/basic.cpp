@@ -1,4 +1,4 @@
-//------------------------------------------------------->create linked list
+//------------------------------------------------------->create & print linked list
 // #include <iostream>
 // using namespace std;
 
@@ -52,7 +52,7 @@
 // }
 
 
-//------------------------------------------------------->Print lenth of linked list
+//------------------------------------------------------->find or Print lenth of linked list
 // #include <iostream>
 // using namespace std;
 // class Node
@@ -95,22 +95,16 @@
 // int main()
 // {
 //     // creation of node
-//     // Node a;                 //static way 
-
-//     Node* first = new Node(10);      //dynamic way to craete node
+//     Node* first = new Node(10);
 //     Node* second = new Node(20);
 //     Node* third = new Node(30);
-//     Node* fourth = new Node(40);
-//     Node* fifth = new Node(50);
 
 //     // now linke
 //     first->next = second;
 //     second->next = third;
-//     third->next = fourth;
-//     fourth->next = fifth;
 
 //     Node* head = first;
-//     print(head); 
+//     print(head);
 
 //     cout<< "Length of LL :"<< findLength(head);
 //     return 0;
@@ -120,6 +114,7 @@
 //------------------------------------------------------->insert at head
 // #include <iostream>
 // using namespace std;
+
 // class Node
 // {
 // public:
@@ -169,14 +164,11 @@
 // int main()
 // {
 //     // creation of node
-//     // Node a;                 //static way 
-
-//     Node* first = new Node(10);      //dynamic way to craete node
+//     Node* first = new Node(10);
 //     Node* second = new Node(20);
 //     Node* third = new Node(30);
 //     Node* fourth = new Node(40);
 //     Node* fifth = new Node(50);
-//     Node* tail = fifth;
 
 //     // now linke
 //     first->next = second;
@@ -185,7 +177,7 @@
 //     fourth->next = fifth;
 
 //     Node* head = first;
-//     cout<<"Printing the entire LL "<<endl;
+//     Node* tail = fifth;
 //     print(head); 
 
 //     insertAtHead(head, tail, 500);
@@ -195,68 +187,69 @@
 
 
 //------------------------------------------------------->insert at tail
-#include <iostream>
-using namespace std;
+// #include <iostream>
+// using namespace std;
 
-class Node
-{
-public:
-    int data;
-    Node *next;
+// class Node
+// {
+// public:
+//     int data;
+//     Node *next;
 
-    Node()
-    {
-        this->data = 0;
-        this->next = NULL;
-    }
-    Node(int data)
-    {
-        this->data = data;
-        this->next = NULL;
-    }
-};
+//     Node()
+//     {
+//         this->data = 0;
+//         this->next = NULL;
+//     }
+//     Node(int data)
+//     {
+//         this->data = data;
+//         this->next = NULL;
+//     }
+// };
 
-//I want to insert a node right at the end of LINKED LIST
-void insertAtTail(Node* &head, Node* &tail, int data) {
-    if(head == NULL) {  //empty LL case
-        Node* newNode = new Node(data);  //step1: creatae a node
-        head = newNode;   //step2: sinle node hai entrie list me, tahts why head and tail ko isper point krwado
-        tail = newNode;
+// //I want to insert a node right at the end of LINKED LIST
+// void insertAtTail(Node* &head, Node* &tail, int data) {
+//     if(head == NULL) {  //empty LL case
+//         Node* newNode = new Node(data);  //step1: creatae a node
+//         head = newNode;   //step2: sinle node hai entrie list me, tahts why head and tail ko isper point krwado
+//         tail = newNode;
         
-    }
-    else {  //non-empty LL case
-        //step1: creatae a node
-        Node* newNode = new Node(data);
-        //step2: tail node ko attach karo newnode se
-        tail->next = newNode;
-        //step3: update tail;
-        tail = newNode;
-    }
-}
+//     }
+//     else {  //non-empty LL case
+//         //step1: creatae a node
+//         Node* newNode = new Node(data);
+//         //step2: tail node ko attach karo newnode se
+//         tail->next = newNode;
+//         //step3: update tail;
+//         tail = newNode;
+//     }
+// }
 
-void print(Node* head) {
+// void print(Node* head) {
 
-    Node* temp = head;     //for traversal orgenal pointer not used for best practise❤️
-    while(temp != NULL) {
-        cout << temp->data << " ";
-        temp = temp->next;
-    }
-}
+//     Node* temp = head;     //for traversal orgenal pointer not used for best practise❤️
+//     while(temp != NULL) {
+//         cout << temp->data << " ";
+//         temp = temp->next;
+//     }
+//     cout<<endl;
+// }
 
-int main()
-{
-    // creation of node
-    Node* tail = NULL;
-    Node* head = NULL;
+// int main()
+// {
+//     // creation of node
+//     Node* tail = NULL;
+//     Node* head = NULL;
 
-    insertAtTail(head, tail, 10);
-    insertAtTail(head, tail, 20);
-    insertAtTail(head, tail, 30);
-    insertAtTail(head, tail, 40);
-    insertAtTail(head, tail, 50);
-    print(head);
-    return 0;
-}
+//     insertAtTail(head, tail, 10);
+//     insertAtTail(head, tail, 20);
+//     insertAtTail(head, tail, 30);
+//     insertAtTail(head, tail, 40);
+//     insertAtTail(head, tail, 50);
+//     print(head);
+//     return 0;
+// }
 
 
 //------------------------------------------------------->insert at any position
@@ -361,7 +354,7 @@ int main()
 //         cout << temp->data << " ";
 //         temp = temp->next;
 //     }
-//     cout<<endl<<endl;
+//     cout<<endl;
 // }
 
 // int main()
@@ -376,7 +369,7 @@ int main()
 //     insertAtTail(head, tail, 50);
 //     print(head);
 
-//     insertAtPosition(head, tail, 100, 55);
+//     insertAtPosition(head, tail, 100, 5);
 //     print(head);
 //     return 0;
 // }
