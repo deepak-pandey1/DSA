@@ -133,7 +133,7 @@ int main()
     print(head);
     deleteNode(head, tail, 3);
     print(head);
-    cout << endl;
+    // cout << endl;
 
     // deleteNode(head, tail, 5);
     // print(head);
