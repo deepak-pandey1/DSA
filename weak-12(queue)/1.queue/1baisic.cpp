@@ -2,8 +2,8 @@
 // #include <iostream>
 // #include <queue>
 // using namespace std;
-// int main()
-// {
+
+// int main() {
 //     // creation
 //     queue<int> q;
 
@@ -25,15 +25,12 @@
 //     q.pop();
 //     cout << "size of queue: "<<q.size() <<endl;
 
-//     // front element
-//     q.push(10);
+//     q.push(10);   // front element of queue
 //     q.push(20);
 //     q.push(30);
 
-//     cout<<"front element of queue is: "<<q.front()<<endl;
-
-//     // back or last or rear element
-//     cout<<"back element of queue is: "<<q.back()<<endl;
+//     cout<<"Front element of queue is: "<<q.front()<<endl;
+//     cout<<"Last or Rear element of queue is: "<<q.back()<<endl;
 //     return 0;
 // }
 
@@ -42,12 +39,12 @@
 #include <iostream>
 using namespace std;
 
-class queue{
+class queue {
     public:
-    int *arr;
-    int size;
-    int front;
-    int rear;
+        int *arr;
+        int size;
+        int front;
+        int rear;
 
     queue(int size){
         arr = new int[size];
@@ -55,37 +52,34 @@ class queue{
         front = -1;
         rear = -1;
     }
+
     void push(int val){
-        // check full
-        if(rear == size-1){
+        if(rear == size-1){    // check full
             cout<< "queue overflow"<<endl;
             return;
         }
-        else if(front == -1 && rear == -1){
+        else if(front == -1 && rear == -1){    //EMPTY CASE
             front++;
             rear++;
             arr[rear] = val;
         }
-        else{
-            // norm case
+        else{        // norm case
             rear++;
             arr[rear] = val;
         }
     }
 
-    void pop(){
-        // underflow
-        if(front == -1 && rear == -1){
-            cout<<"queue inderflow"<<endl;
+    void pop() {
+        if(front == -1 && rear == -1){    // underflow
+            cout<<"Queue Underflow"<<endl;
             return;
         }
-        else if(front == -1 && rear == -1){
+        else if(front == rear){  //empty case => single elemnt
             arr[front] = -1;
             front = -1;
             rear = -1;
         }
-        else{
-            // norm case
+        else{                 // norm case
             arr[front] = -1;
             front++;
         }
@@ -112,6 +106,7 @@ class queue{
     int getFront(){
         if(front == -1){
             cout<<"No element in queue, cannot give front element"<<endl;
+            return -1;
         }
         else{
             return arr[front];
@@ -120,7 +115,8 @@ class queue{
 
     int getRear(){
         if(front == -1){
-            cout<<"No element in queue, cannot give front element"<<endl;
+            cout<<"No element in queue, cannot give rear element"<<endl;
+            return -1;
         }
         else{
             return arr[rear];
@@ -136,8 +132,7 @@ class queue{
     }
 };
 
-int main()
-{
+int main() {
     queue q(5);    //dynamic array from create queue
     q.print();
 
@@ -157,16 +152,7 @@ int main()
     cout<<"queue is empty or not: "<<q.isEmpty()<<endl;
     
     q.push(100);                 //this is behaviour of queue
-    q.print();
-
-    q.pop();
-    q.pop();
-    q.pop();
-    q.print();
     cout<< q.getFront()<<endl;
-
-    q.pop();
-    q.print();
-    cout<<"size of queue: "<<q.getSize()<<endl;
+    cout<< q.getRear()<<endl;
     return 0;
 }

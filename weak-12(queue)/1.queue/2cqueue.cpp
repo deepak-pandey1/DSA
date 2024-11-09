@@ -4,10 +4,10 @@ using namespace std;
 
 class Cqueue{
     public:
-    int *arr;
-    int size;
-    int front;
-    int rear;
+        int *arr;
+        int size;
+        int front;
+        int rear;
 
     Cqueue(int size){
         arr = new int[size];
@@ -15,9 +15,10 @@ class Cqueue{
         front = -1;
         rear = -1;
     }
+
     void push(int val){
-        // check full
-        if((front == 0 && rear == size-1) ||(rear == front - 1)){
+        // overflow
+        if((front == 0 && rear == size-1) || (rear == front - 1)) {
             cout<< "Overflow"<<endl;
         }
         // empty case->first element
@@ -43,7 +44,7 @@ class Cqueue{
         if(front == -1 && rear == -1){
             cout<<"underflow"<<endl;
         }
-        // empty case->first element
+        // single element
         else if(front ==  rear){
             arr[front] = -1;
             front = -1;
@@ -107,11 +108,8 @@ class Cqueue{
     }
 };
 
-int main()
-{
+int main() {
     Cqueue q(5);    //dynamic array from create queue
-    q.print();
-
     q.push(10);
     q.push(20);
     q.push(30);
@@ -124,9 +122,7 @@ int main()
     q.pop();
     q.print();
     q.push(100);
-    q.print();
     q.push(110);
-    q.print();
     q.push(120);
     q.print();
     q.push(120);
