@@ -4,7 +4,7 @@
 // #include <stack>
 // using namespace std;
 
-// void reverseQueue(queue<int> &q){
+// void reverseQueue(queue<int>& q){
 //     stack<int> s;
 
 //     // one by one queue se element lo and stack me daalo
@@ -22,8 +22,7 @@
 //     }
 // }
 
-// int main()
-// {
+// int main() {
 //     queue<int> q;
 //     q.push(10);
 //     q.push(20);
@@ -33,7 +32,6 @@
 //     q.push(60);
 
 //     reverseQueue(q);
-
 //     cout<< "printing quue: "<<endl;
 //     while(!q.empty()){
 //         int element = q.front();
@@ -50,7 +48,7 @@
 // #include <stack>
 // using namespace std;
 
-// void reverse(queue<int> &q){
+// void reverse(queue<int> &q) {
 //     // base case
 //     if(q.empty()){
 //         return;
@@ -64,8 +62,7 @@
 //     q.push(element);
 // }
 
-// int main()
-// {
+// int main() {
 //     queue<int> q;
 //     q.push(10);
 //     q.push(20);
@@ -86,7 +83,7 @@
 // }
 
 
-//------------------------------------------------------->queue->Reverse K element
+//------------------------------------------------------->queue->Reverse first K element
 // #include <iostream>
 // #include <queue>
 // #include <stack>
@@ -101,7 +98,7 @@
 //     }
 
 //     // push first k element into stack
-//     for(int i = 0; i<k; i++){
+//     for(int i = 0; i < k; i++){
 //         int temp = q.front();
 //         q.pop();
 //         s.push(temp);
@@ -122,8 +119,7 @@
 //     }
 // }
 
-// int main()
-// {
+// int main() {
 //     queue<int> q;
 //     q.push(10);
 //     q.push(20);
@@ -133,7 +129,6 @@
 //     q.push(60);
 
 //     reverseFirstK(q,4);
-
 //     cout<< "printing quue: "<<endl;
 //     while(!q.empty()){
 //         int element = q.front();
@@ -174,8 +169,7 @@
 //     }
 // }
 
-// int main()
-// {
+// int main() {
 //     queue<int> q;
 //     q.push(10);
 //     q.push(20);
@@ -185,7 +179,6 @@
 //     q.push(60);
 
 //     interLeaveQueue(q);
-
 //     cout<< "printing quue: "<<endl;
 //     while(!q.empty()){
 //         int element = q.front();
@@ -197,62 +190,61 @@
 
 
 //------------------------------------------------------->first -ve integer in every window of "K"
-#include <iostream>
-#include <queue>
-#include <stack>
-using namespace std;
+// #include <iostream>
+// #include <queue>
+// #include <stack>
+// using namespace std;
 
-void printFirstNegtive(int arr[], int n, int k){
-    deque<int> dq;                                 //koe frk nhi padhta queue use kru ya simple queue, actualy they provide extra func
+// void printFirstNegtive(int arr[], int n, int k){
+//     deque<int> dq;                                 //koe frk nhi padhta queue use kru ya simple queue, actualy they provide extra func
 
-    // process first k elements first window
-    for(int index = 0; index<k; index++){
-        int elements = arr[index];
-        if(elements < 0){
-            dq.push_back(index);
-        }
-    }
+//     // process first k elements first window
+//     for(int index = 0; index < k; index++){
+//         int elements = arr[index];
+//         if(elements < 0){
+//             dq.push_back(index);
+//         }
+//     }
 
-    // process remaining windoe -> Removal an addition
-    for(int index = k; index < n; index++){
-        // aage badhne se pehlai purani window ka asner nikaldo
-        if(dq.empty()){
-          cout<<"0"<<endl;
-        }
-        else{
-            cout<< arr[dq.front()] <<" ";
-        }
-        // removal - jo bhi index out of range h, usko queue me se remove krdo
-        if(index - dq.front() >= k){
-            dq.pop_front();
-        }
-        // addition
-        if(arr[index] < 0){
-            dq.push_back(index);
-        }
-    }
+//     // process remaining windoe -> Removal an addition
+//     for(int index = k; index < n; index++){
+//         // aage badhne se pehlai purani window ka asner nikaldo
+//         if(dq.empty()){
+//           cout<<"0"<<endl;
+//         }
+//         else{
+//             cout<< arr[dq.front()] <<" ";
+//         }
+//         // removal - jo bhi index out of range h, usko queue me se remove krdo
+//         if(index - dq.front() >= k){
+//             dq.pop_front();
+//         }
+//         // addition
+//         if(arr[index] < 0){
+//             dq.push_back(index);
+//         }
+//     }
 
-    // last window ka answer print krdo
-    if(dq.empty()){
-        cout<<"0"<<endl;
-    }
-    else{
-        cout<< arr[dq.front()] <<" ";
-    }
-}
+//     // last window ka answer print krdo
+//     if(dq.empty()){
+//         cout<<"0"<<endl;
+//     }
+//     else{
+//         cout<< arr[dq.front()] <<" ";
+//     }
+// }
 
-int main()
-{
-    int arr[] = {2,-5,4,-1,-2,0,5};
-    int size = 7;
-    int k = 3;
-    printFirstNegtive(arr, size, k);
+// int main() {
+//     int arr[] = {2,-5,4,-1,-2,0,5};
+//     int size = 7;
+//     int k = 3;
+//     printFirstNegtive(arr, size, k);
 
-    // cout<< "printing quue: "<<endl;
-    // while(!q.empty()){
-    //     int element = q.front();
-    //     q.pop();
-    //     cout<< element <<" ";
-    // }
-    return 0;
-}
+//     // cout<< "printing quue: "<<endl;
+//     // while(!q.empty()){
+//     //     int element = q.front();
+//     //     q.pop();
+//     //     cout<< element <<" ";
+//     // }
+//     return 0;
+// }
