@@ -216,7 +216,7 @@
 //             cout<< arr[dq.front()] <<" ";
 //         }
 //         // removal - jo bhi index out of range h, usko queue me se remove krdo
-//         if(index - dq.front() >= k){
+//         if(index - dq.front() >= k){   //cond of out of range window
 //             dq.pop_front();
 //         }
 //         // addition
@@ -239,12 +239,5 @@
 //     int size = 7;
 //     int k = 3;
 //     printFirstNegtive(arr, size, k);
-
-//     // cout<< "printing quue: "<<endl;
-//     // while(!q.empty()){
-//     //     int element = q.front();
-//     //     q.pop();
-//     //     cout<< element <<" ";
-//     // }
 //     return 0;
 // }
