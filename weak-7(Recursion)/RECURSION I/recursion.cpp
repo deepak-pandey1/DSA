@@ -1,32 +1,32 @@
 //------------------------------------------------------->factorial
 // #include <iostream>
 // using namespace std;
-// int factororial(int n){
+// int factororial(int n) {
 //     // base case
 //     if(n == 1 || n == 0)
 //       return 1;
 
 //     // recusrsion call or recursion relation
-//     int ans = factororial(n-1);
+//     int recursionKaAns = factororial(n-1);
 
 //     // processing
-//     int finalans = n * ans;
+//     int finalans = n * recursionKaAns;
 //     return finalans;
 // }
-// int main()
-// {
+
+// int main() {
 //     cout << factororial(5);
 //     return 0;
 // }
 
 
-//------------------------------------------------------->counting
+//------------------------------------------------------->counting print from n to 1
 // #include <iostream>
 // using namespace std;
 // void counting(int n){
 //     // base case
 //     if(n == 1){
-//         cout<<n<<endl;
+//         cout<<1 <<" ";
 //         return;
 //     }
 
@@ -37,8 +37,7 @@
 //     counting(n-1);
     
 // }
-// int main()
-// {
+// int main() {
 //     counting(5);
 //     return 0;
 // }
@@ -67,7 +66,7 @@
 //------------------------------------------------------->febonacci series
 // #include <iostream>
 // using namespace std;
-// int febonacci(int n){
+// int fib(int n){
 //     // base case
 //     if(n == 0){
 //         return 0;
@@ -77,33 +76,32 @@
 //     }
 
 //     // recursion call
-//     int ans = febonacci(n-1) + febonacci(n-2);
+//     int ans = fib(n-1) + fib(n-2);
 //     return ans;
     
 // }
-// int main()
-// {
-//     cout<< febonacci(7);
+// int main() {
+//     cout<< fib(7);
 //     return 0;
 // }
 
 
 //------------------------------------------------------->totalSum
-#include <iostream>
-using namespace std;
-int totalSum(int n){
-    // base case
-    if(n == 1){
-        return 1;
-    }
+// #include <iostream>
+// using namespace std;
+// int totalSum(int n){
+//     // base case
+//     if(n == 1){
+//         return 1;
+//     }
 
-    // recursion call
-    int ans = n + totalSum(n-1);
-    return ans;
+//     // recursion call
+//     int ans = n + totalSum(n-1);
+//     return ans;
     
-}
-int main()
-{
-    cout<< totalSum(5);
-    return 0;
-}
+// }
+
+// int main() {
+//     cout<< totalSum(5);
+//     return 0;
+// }
