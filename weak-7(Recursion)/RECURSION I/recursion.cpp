@@ -57,8 +57,7 @@
 //     return ans;
     
 // }
-// int main()
-// {
+// int main() {
 //     cout<< pow(10);
 //     return 0;
 // }
