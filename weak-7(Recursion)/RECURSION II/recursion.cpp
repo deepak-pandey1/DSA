@@ -12,8 +12,7 @@
 //     print(arr, size, index + 1);
 
 // }
-// int main()
-// {
+// int main() {
 //     int arr[] = {50,40,30,20,10};
 //     int size = 5;
 //     int index = 0;
@@ -36,8 +35,7 @@
 //     cout<<arr[index]<<" ";
 
 // }
-// int main()
-// {
+// int main() {
 //     int arr[] = {50,40,30,20,10};
 //     int size = 5;
 //     int index = 0;
@@ -61,8 +59,7 @@
 //     bool ans = linearSearch(arr, size, index + 1, target);
 //     return ans;
 // }
-// int main()
-// {
+// int main() {
 //     int arr[] = {50,40,30,20,10};
 //     int size = 5;
 //     int index = 0;
@@ -86,8 +83,7 @@
 //     //recursive call
 //     findMin(arr, size, index + 1, mini);
 // }
-// int main()
-// {
+// int main() {
 //     int arr[] = {50,40,30,20,10};
 //     int size = 5;
 //     int index = 0;
@@ -114,8 +110,7 @@
 //     //recursive call
 //     evenNoPut(arr, size, index + 1, ans);
 // }
-// int main()
-// {
+// int main() {
 //     int arr[] = {51,40,31,20,10};
 //     int size = 5;
 //     int index = 0;
@@ -144,8 +139,7 @@
 //     find(arr, size, index + 1, target);
 
 // }
-// int main()
-// {
+// int main() {
 //     int arr[] = {51,40,31,20,10};
 //     int size = 5;
 //     int index = 0;
@@ -169,8 +163,7 @@
 //     //recursive call
 //     findMan(arr, size, index + 1, maxi);
 // }
-// int main()
-// {
+// int main() {
 //     int arr[] = {50,40,30,20,10};
 //     int size = 5;
 //     int index = 0;
@@ -194,8 +187,7 @@
 //     //recursive call
 //     findMan(arr, size, index + 1);
 // }
-// int main()
-// {
+// int main() {
 //     int arr[] = {50,40,30,20,10};
 //     int size = 5;
 //     int index = 0;
@@ -220,8 +212,7 @@
 //     find(arr, size, index + 1, target);
 
 // }
-// int main()
-// {
+// int main() {
 //     int arr[] = {10,40,10,20,10};
 //     int size = 5;
 //     int index = 0;
@@ -250,8 +241,7 @@
 //     cout<<digit<<" ";
 
 // }
-// int main()
-// {
+// int main() {
 //     int num = 4125;
 
 //     print(num);
@@ -279,8 +269,7 @@
 //     ans.push_back(digit);
 
 // }
-// int main()
-// {
+// int main() {
 //     int num = 4125;
 //     vector<int> ans;
 
