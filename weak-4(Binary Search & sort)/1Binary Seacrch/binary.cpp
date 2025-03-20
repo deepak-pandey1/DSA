@@ -54,7 +54,7 @@
 //     // int mid = (start + end)/2;  overflow chance
 //     //   best prectise
 //     int mid = s+(e-s)/2;
-//     int ans  = 0;
+//     int ans  = -1;
 
 //     while(s <= e){
 //         if(arr[mid] == target){   // found
@@ -65,7 +65,7 @@
 //             s = mid + 1;  //right mai jao
 //         }
 //         else if(target < arr[mid]){
-//             e = mid + 1; //left me jao
+//             e = mid - 1; //left me jao
 //         }
 //         mid = (s+e)/2;
 //     }
