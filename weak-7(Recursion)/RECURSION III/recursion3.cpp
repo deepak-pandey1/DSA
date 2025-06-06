@@ -10,7 +10,7 @@
 //     if(arr[index] > arr[index-1]){
 //         //aage check krna padega ab
 //         // ab recursion sambhal lega
-//         bool aageKaAns = checkSorted(arr, size, index+1);
+//         return checkSorted(arr, size, index+1);
 //     }
 //     else{
 //         // sorted nhi hai
